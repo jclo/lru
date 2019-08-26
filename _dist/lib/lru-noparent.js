@@ -1,5 +1,5 @@
 /*! ****************************************************************************
- * LRU v0.0.0
+ * LRU v0.0.1
  *
  * An in-memory key/value cache based on the Least Recently Used algorithm.
  * (you can download it from npm or github repositories)
@@ -813,7 +813,7 @@
 
 
     // Attaches a constant to ESLib that provides the version of the lib.
-    LRU.VERSION = '0.0.0';
+    LRU.VERSION = '0.0.1';
 
     // For testing purpose:
     LRU._ = _;

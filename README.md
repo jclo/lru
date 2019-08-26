@@ -12,7 +12,7 @@
 
 `LRU` is an in-memory key/value cache that relies on the Least Recently Used algorithm to maintain its size in a predefined limits.
 
-`LRU` runs on both the browser and Node.js.
+`LRU` runs on both Node.js and ECMAScript 2015 (ES6) compliant browsers.
 
 `LRU` is encapsulated in a module pattern. Only the variable `LRU` is accessible outside the module. Thus, it doesn't pollute the global space.
 
