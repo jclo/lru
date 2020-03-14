@@ -1,5 +1,5 @@
 /*! ****************************************************************************
- * LRU v0.0.1
+ * LRU v0.0.2
  *
  * An in-memory key/value cache based on the Least Recently Used algorithm.
  * (you can download it from npm or github repositories)
@@ -69,7 +69,6 @@
   };
   /* - */
 
-
   /* ***************************************************************************
    *
    * Provides the function 'extend' that is used to fill the object tree with
@@ -136,7 +135,6 @@
     };
   }());
   /* - */
-
 
   /* ***************************************************************************
    *
@@ -285,7 +283,6 @@
     };
   }());
   /* eslint-enable no-underscore-dangle */
-
 
   /* ***************************************************************************
    *
@@ -661,7 +658,6 @@
   }());
   /* eslint-enable one-var, semi-style, no-underscore-dangle */
 
-
   /* ***************************************************************************
    *
    * A in-memory key/value database based on the Least Recently Used algorithm.
@@ -817,7 +813,7 @@
 
 
     // Attaches a constant to ESLib that provides the version of the lib.
-    LRU.VERSION = '0.0.1';
+    LRU.VERSION = '0.0.2';
 
     // For testing purpose:
     LRU._ = _;
@@ -983,7 +979,6 @@
       },
     };
   }());
-
 
   // Returns the library name:
   return LRU;
