@@ -137,9 +137,9 @@ If you want to embed, `LRU` inside your library, you just need to copy it and re
   /* eslint-disable no-param-reassign */
   root.LRU = factory(root);
   /* eslint-enable no-param-reassign */
-}
 }(this, function(root) {
-'use strict';
+  'use strict'; 
+}
 ```
 
 

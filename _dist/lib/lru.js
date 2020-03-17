@@ -1,13 +1,13 @@
 /*! ****************************************************************************
- * LRU v0.0.2
+ * LRU v0.0.3
  *
  * An in-memory key/value cache based on the Least Recently Used algorithm.
  * (you can download it from npm or github repositories)
  * Copyright (c) 2020 Mobilabs <contact@mobilabs.fr> (http://www.mobilabs.fr).
  * Released under the MIT license. You may obtain a copy of the License
  * at: http://www.opensource.org/licenses/mit-license.php).
+ * Built from ES6lib v0.0.10.
  * ************************************************************************** */
-// Based on ES6.lib template v0.0.1
 // ESLint declarations
 /* global define */
 /* eslint strict: ["error", "function"] */
@@ -22,6 +22,7 @@
     // Node. Does not work with strict CommonJS, but
     // only CommonJS-like environments that support module.exports,
     // like Node.
+    /* eslint-disable-next-line no-param-reassign */
     module.exports = factory(root);
     // This is a hack to attach the lib to the browser root when this lib is
     // included inside another lib and the whole is browserifyied:
@@ -813,7 +814,7 @@
 
 
     // Attaches a constant to ESLib that provides the version of the lib.
-    LRU.VERSION = '0.0.2';
+    LRU.VERSION = '0.0.3';
 
     // For testing purpose:
     LRU._ = _;

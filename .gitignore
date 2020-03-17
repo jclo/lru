@@ -1,5 +1,6 @@
-.DS_store
+.DS_Store
 __trash
+
 .nyc_output
 coverage
 node_modules
