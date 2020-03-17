@@ -3,7 +3,7 @@
 ### 0.0.3 (March 17, 2020)
 
   * Updated the project with the latest ES6lib boilerplate,
-  * ...,
+  * Release.
 
 
 ### 0.0.2 (March 14, 2020)
