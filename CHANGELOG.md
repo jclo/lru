@@ -3,6 +3,7 @@
 ### 1.0.0 (August 8, 2020)
 
   * Updated the build (thanks to ES6lib 1.0) to create both UMD and ES6 modules,
+  * First release candidate,
   * ...,
 
 
