@@ -1,5 +1,5 @@
 /*! ****************************************************************************
- * LRU v1.0.0-beta.1
+ * LRU v1.0.0
  *
  * An in-memory key/value cache based on the Least Recently Used algorithm.
  * (you can download it from npm or github repositories)
@@ -781,7 +781,7 @@
       const obj = Object.create(methods);
       obj.library = {
         name: 'LRU',
-        version: '1.0.0-beta.1',
+        version: '1.0.0',
       };
 
       obj.db = {};
@@ -818,7 +818,7 @@
     /* eslint-enable no-multi-spaces */
 
     // Attaches a constant to LRU that provides the version of the lib.
-    LRU.VERSION = '1.0.0-beta.1';
+    LRU.VERSION = '1.0.0';
 
 
     // -- Private Static Methods -----------------------------------------------
