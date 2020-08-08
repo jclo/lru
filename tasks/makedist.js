@@ -3,7 +3,7 @@
 
 'use strict';
 
-// -- Node modules
+// -- Vendor Modules
 const { src, dest, series, parallel } = require('gulp')
     , del     = require('del')
     , concat  = require('gulp-concat')
@@ -13,22 +13,20 @@ const { src, dest, series, parallel } = require('gulp')
     ;
 
 
-// -- Local modules
+// -- Local Modules
 const config = require('./config')
     ;
 
 
-// -- Local constants
-const { dist }     = config
-    , { libdir }   = config
-    , { libname }  = config
-    , { noparent } = config
-    , name         = libname.replace(/\s+/g, '').toLowerCase()
-    , { license }  = config
+// -- Local Constants
+const { dist }    = config
+    , { libdir }  = config
+    , { name }    = config
+    , { license } = config
     ;
 
 
-// -- Local variables
+// -- Local Variables
 
 
 // -- Gulp Private Tasks
@@ -52,22 +50,30 @@ function copydev() {
     .pipe(dest(`${dist}/lib`));
 }
 
-// Copies the development version without parent.
-function makenoparentlib() {
-  return src(`${libdir}/${name}${noparent}.js`)
+// Copies the module development version.
+function copydevm() {
+  return src(`${libdir}/${name}.mjs`)
     .pipe(header(license))
-    .pipe(replace('/*! *', '/** *'))
-    .pipe(replace('/* global define */', '/* global */'))
-    .pipe(replace(/ {2}'use strict';\n\n/g, ''))
     .pipe(dest(`${dist}/lib`));
 }
 
 // Creates the minified version.
 function makeminified() {
   return src(`${libdir}/${name}.js`)
+    .pipe(replace('/*! ***', '/** ***'))
     .pipe(uglify())
     .pipe(header(license))
     .pipe(concat(`${name}.min.js`))
+    .pipe(dest(`${dist}/lib`));
+}
+
+// Creates the module minified version.
+function makeminifiedm() {
+  return src(`${libdir}/${name}.mjs`)
+    .pipe(replace('/*! ***', '/** ***'))
+    .pipe(uglify())
+    .pipe(header(license))
+    .pipe(concat(`${name}.min.mjs`))
     .pipe(dest(`${dist}/lib`));
 }
 
@@ -76,5 +82,5 @@ function makeminified() {
 
 module.exports = series(
   deldist,
-  parallel(doskeleton, copydev, makenoparentlib, makeminified),
+  parallel(doskeleton, copydev, copydevm, makeminified, makeminifiedm),
 );

@@ -10,8 +10,6 @@ const { expect } = require('chai')
 
 
 // -- Local modules
-const LRU = require('../../index.js')
-    ;
 
 
 // -- Local constants
@@ -21,7 +19,7 @@ const LRU = require('../../index.js')
 
 
 // -- Main
-module.exports = () => {
+module.exports = (LRU) => {
   describe('Test automatic prune:', () => {
     it('Expects lru.count() to return the value 5.', () => {
       const lru = LRU({ maxAge: 500, prune: 1000 });

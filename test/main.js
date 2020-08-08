@@ -1,6 +1,6 @@
 // ESLint declarations:
 /* global describe */
-/* eslint one-var: 0, semi-style: 0 */
+/* eslint one-var: 0, semi-style: 0, no-underscore-dangle: 0 */
 
 'use strict';
 
@@ -8,7 +8,8 @@
 
 
 // -- Local modules
-const over       = require('./int/over')
+const LRU        = require('../index.js')
+    , over       = require('./int/over')
     , core       = require('./int/core')
     , setget     = require('./int/setget')
     , hasremove  = require('./int/hasremove')
@@ -27,27 +28,29 @@ const over       = require('./int/over')
 
 // -- Main
 describe('Test LRU:', () => {
+  const [_] = LRU._setTestMode();
+
   // Test the overslash subset:
-  over();
+  over(LRU, _);
 
   // Test the library and its constructor:
-  core();
+  core(LRU);
 
   // Test set and get:
-  setget();
+  setget(LRU);
 
   // Test has and remove:
-  hasremove();
+  hasremove(LRU);
 
   // Test the count, empty and dump methods:
-  ced();
+  ced(LRU);
 
   // Test the renew and prune methods:
-  renewprune();
+  renewprune(LRU);
 
   // Test the cache overflow:
-  maxitage();
+  maxitage(LRU);
 
   // Test the automatic prune:
-  autoprune();
+  autoprune(LRU);
 });

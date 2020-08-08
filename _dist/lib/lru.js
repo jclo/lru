@@ -1,12 +1,12 @@
 /*! ****************************************************************************
- * LRU v0.0.3
+ * LRU v1.0.0-beta.1
  *
  * An in-memory key/value cache based on the Least Recently Used algorithm.
  * (you can download it from npm or github repositories)
  * Copyright (c) 2020 Mobilabs <contact@mobilabs.fr> (http://www.mobilabs.fr).
  * Released under the MIT license. You may obtain a copy of the License
  * at: http://www.opensource.org/licenses/mit-license.php).
- * Built from ES6lib v0.0.10.
+ * Built from ES6lib v1.0.0-beta.7.
  * ************************************************************************** */
 // ESLint declarations
 /* global define */
@@ -24,10 +24,6 @@
     // like Node.
     /* eslint-disable-next-line no-param-reassign */
     module.exports = factory(root);
-    // This is a hack to attach the lib to the browser root when this lib is
-    // included inside another lib and the whole is browserifyied:
-    /* eslint-disable-next-line no-param-reassign */
-    if (root.LRU === null) root.LRU = factory(root);
   } else {
     // Browser globals.
     /* eslint-disable-next-line no-param-reassign */
@@ -36,41 +32,28 @@
 }(this, (root) => {
   'use strict';
 
-  // This is the list of the constants that are defined at the global level of
-  // this module and are accessible to all. So, they are considered as reserved
-  // words for this library.
-  // const TLRU
-  /* eslint-disable one-var, semi-style */
+  /** **************************************************************************
+   * _head provides the list of the constants that are defined at the global
+   * level of this module and are accessible to all. So, they are considered
+   * as reserved words for this library.
+   * ************************************************************************ */
+  /* eslint-disable one-var, no-unused-vars, semi-style */
+
   let LRU
     , extend
     , _
     ;
-  /* eslint-enable one-var, semi-style */
 
-  /* ***************************************************************************
-   *
-   * Tree is an internal object that links all the internal modules.
-   *
-   * tree.js is just a literal object that contains a set of functions. It
-   * can't be intantiated.
-   *
-   *
-   * @namespace LRU
-   * @exports   -
-   * @author    -
-   * @since     0.0.0
-   * @version   -
-   * ************************************************************************ */
-  /* - */
-
+  // Tree is an internal object that links all the internal modules.
   const TLRU = {
     Util: {
       Public: {},
     },
   };
-  /* - */
 
-  /* ***************************************************************************
+  /* eslint-enable one-var, no-unused-vars, semi-style */
+
+  /** **************************************************************************
    *
    * Provides the function 'extend' that is used to fill the object tree with
    * the public static or object methods when the Javascript VM browses the
@@ -96,20 +79,22 @@
    * @version      -
    * ************************************************************************ */
   /* - */
+  /* - */
 
   (function() {
-    // IIFE
-
-    // -- Module path
+    // START OF IIFE
 
 
-    // -- Local modules
+    // -- Module Path
 
 
-    // -- Local constants
+    // -- Local Modules
 
 
-    // -- Local variables
+    // -- Local Constants
+
+
+    // -- Local Variables
 
 
     // -- Public function ------------------------------------------------------
@@ -134,14 +119,16 @@
         object[keys[i]] = methods[keys[i]];
       }
     };
+
+    // END OF IIFE
   }());
   /* - */
 
-  /* ***************************************************************************
+  /** **************************************************************************
    *
-   * A micro subset of the Overslash library.
+   * A ...
    *
-   * _.js is just a literal object that contains a set of functions. It
+   * basic.js is just a literal object that contains a set of functions. It
    * can't be intantiated.
    *
    * Private Functions:
@@ -159,31 +146,33 @@
    *
    *
    *
-   * @namespace    _
+   * @namespace    -
    * @dependencies none
    * @exports      -
    * @author       -
    * @since        0.0.0
    * @version      -
    * ************************************************************************ */
+  /* - */
   /* eslint-disable no-underscore-dangle */
 
   (function() {
-    // IIFE
-
-    // -- Module path
+    // START OF IIFE
 
 
-    // -- Local modules
+    // -- Module Path
 
 
-    // -- Local constants
+    // -- Local Modules
 
 
-    // -- Local variables
+    // -- Local Constants
 
 
-    // -- Public Static Methods ------------------------------------------------
+    // -- Local Variables
+
+
+    // -- Main -----------------------------------------------------------------
 
     _ = {
 
@@ -282,10 +271,13 @@
         return obj === parseFloat(obj) ? !!n : void 0;
       },
     };
+
+
+    // END OF IIFE
   }());
   /* eslint-enable no-underscore-dangle */
 
-  /* ***************************************************************************
+  /** **************************************************************************
    *
    * Implements the LRU methods.
    *
@@ -311,29 +303,31 @@
    *
    *
    *
-   * @namespace    TLRU.Util.Public
+   * @namespace    -
    * @dependencies none
    * @exports      -
    * @author       -
    * @since        0.0.0
    * @version      -
    * ************************************************************************ */
+  /* - */
   /* eslint-disable one-var, semi-style, no-underscore-dangle */
 
   (function() {
-    // IIFE
+    // START OF IIFE
 
-    // -- Module path
+
+    // -- Module Path
     const Root = TLRU.Util.Public;
 
 
-    // -- Local modules
+    // -- Local Modules
 
 
-    // -- Local constants
+    // -- Local Constants
 
 
-    // -- Local variables
+    // -- Local Variables
 
 
     // -- Private Functions ----------------------------------------------------
@@ -656,10 +650,13 @@
       },
       /* eslint-enable no-param-reassign */
     });
+
+
+    // END OF IIFE
   }());
   /* eslint-enable one-var, semi-style, no-underscore-dangle */
 
-  /* ***************************************************************************
+  /** **************************************************************************
    *
    * A in-memory key/value database based on the Least Recently Used algorithm.
    *
@@ -674,6 +671,10 @@
    *
    * Constructor:
    *  . LRU                         creates and returns the LRU object,
+   *
+   *
+   * Private Static Methods:
+   *  . _setTestMode                returns internal objects for testing purpose,
    *
    *
    * Public Static Methods:
@@ -693,34 +694,35 @@
    *
    *
    *
-   * @namespace    LRU
+   * @namespace    -
    * @dependencies none
    * @exports      -
    * @author       -
    * @since        0.0.0
    * @version      -
    * ************************************************************************ */
-  /* eslint-disable one-var, semi-style */
+  /* - */
+  /* eslint-disable one-var, semi-style, no-underscore-dangle */
 
   (function() {
-    // IIFE
-
-    // -- Module path
+    // START OF IIFE
 
 
-    // -- Local modules
-    const Util = TLRU.Util.Public
-        ;
+    // -- Module Path
 
 
-    // -- Local constants
+    // -- Local Modules
+    const Util = TLRU.Util.Public;
+
+
+    // -- Local Constants
     // Saves the previous value of the library variable, so that it can be
     // restored later on, if noConflict is used.
     const previousLRU = root.LRU
         ;
 
 
-    // -- Local variables
+    // -- Local Variables
     let methods
       , pruneInterval
       , timeToPrune
@@ -770,14 +772,17 @@
      *
      * @constructor (arg1)
      * @public
-     * @param {Object}        the optional parameters,
+     * @param {String}        the argument to be saved as an object variable,
      * @returns {Object}      returns the LRU object,
      * @since 0.0.0
      */
     /* eslint-disable no-multi-spaces */
     LRU = function(options) {
-      const obj = Object.create(methods)
-          ;
+      const obj = Object.create(methods);
+      obj.library = {
+        name: 'LRU',
+        version: '1.0.0-beta.1',
+      };
 
       obj.db = {};
 
@@ -812,12 +817,24 @@
     };
     /* eslint-enable no-multi-spaces */
 
+    // Attaches a constant to LRU that provides the version of the lib.
+    LRU.VERSION = '1.0.0-beta.1';
 
-    // Attaches a constant to ESLib that provides the version of the lib.
-    LRU.VERSION = '0.0.3';
 
-    // For testing purpose:
-    LRU._ = _;
+    // -- Private Static Methods -----------------------------------------------
+
+    /**
+     * Returns the internal objects for testing purpose.
+     *
+     * @method ()
+     * @private
+     * @param {}              -,
+     * @returns {Object}      returns a list of internal objects,
+     * @since 0.0.0
+     */
+    LRU._setTestMode = function() {
+      return [_];
+    };
 
 
     // -- Public Static Methods ------------------------------------------------
@@ -826,13 +843,13 @@
      * Returns a reference to this LRU object.
      *
      * Nota:
-     * Running LRU in noConflic mode, returns the LRU variable to its
-     _ previous owner.
+     * Running LRU in noConflict mode, returns the LRU variable to its
+     * _ previous owner.
      *
      * @method ()
      * @public
      * @param {}              -,
-     * @returns {String}      returns the LRU object,
+     * @returns {Object}      returns the LRU object,
      * @since 0.0.0
      */
     /* istanbul ignore next */
@@ -979,7 +996,10 @@
         return _.isString(key) ? Util.renew(this.db, key) : null;
       },
     };
+
+    // END OF IIFE
   }());
+  /* eslint-enable one-var, semi-style, no-underscore-dangle */
 
   // Returns the library name:
   return LRU;

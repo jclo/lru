@@ -10,8 +10,6 @@ const { expect } = require('chai')
 
 
 // -- Local modules
-const LRU = require('../../index.js')
-    ;
 
 
 // -- Local constants
@@ -21,7 +19,7 @@ const LRU = require('../../index.js')
 
 
 // -- Main
-module.exports = () => {
+module.exports = (LRU) => {
   describe('Test the count, empty and dump methods:', () => {
     describe('Test the count method:', () => {
       const lru = LRU();

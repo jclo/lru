@@ -1,3 +1,4 @@
   // Returns the library name:
   return LRU;
 }));
+{{lib:es6:export}}

@@ -1,14 +1,14 @@
 # LRU
 
 [![NPM version][npm-image]][npm-url]
+[![GitHub last commit][commit-image]][commit-url]
 [![Travis CI][travis-image]][travis-url]
 [![Test coverage][coveralls-image]][coveralls-url]
 [![Dependencies status][dependencies-image]][dependencies-url]
 [![Dev Dependencies status][devdependencies-image]][devdependencies-url]
+[![npm bundle size][npm-bundle-size-image]][npm-bundle-size-url]
 [![License][license-image]](LICENSE.md)
-<!--- [![node version][node-image]][node-url] -->
 
-[![NPM install][npm-install-image]][npm-install-url]
 
 `LRU` is an in-memory key/value cache that relies on the Least Recently Used algorithm to maintain its size in a predefined limits.
 
@@ -127,23 +127,7 @@ The value is expressed in `milliseconds`. It can be lower that `1000`. In the ex
 
 ## Embed LRU into your own library
 
-You can easily embed `LRU` into your own library by a simple copy and paste. As said earlier, `LRU` is encapsulated inside a module pattern. It does export only the variable `LRU` in the global space.
-
-If you want to embed, `LRU` inside your library, you just need to copy it and replace `this` at the top of the library by the object you want to attach it:
-
-```javascript
-} else {
-  // Browser globals.
-  /* eslint-disable no-param-reassign */
-  root.LRU = factory(root);
-  /* eslint-enable no-param-reassign */
-}(this, function(root) {
-  'use strict'; 
-}
-```
-
-
-You don't need `browserify`, `webpack` or so on!
+You can easily embed `LRU` into your own library by a simple copy and paste. Or by using `import`.
 
 
 Enjoy!
@@ -156,26 +140,21 @@ Enjoy!
 <!--- URls -->
 
 [npm-image]: https://img.shields.io/npm/v/@mobilabs/lru.svg?style=flat-square
-[npm-install-image]: https://nodei.co/npm/@mobilabs/lru.png?compact=true
-[node-image]: https://img.shields.io/badge/node.js-%3E=_0.10-green.svg?style=flat-square
-[download-image]: https://img.shields.io/npm/dm/@mobilabs/lru.svg?style=flat-square
+[release-image]: https://img.shields.io/github/release/jclo/lru.svg?include_prereleases&style=flat-square
+[commit-image]: https://img.shields.io/github/last-commit/jclo/lru.svg?style=flat-square
 [travis-image]: https://img.shields.io/travis/jclo/lru.svg?style=flat-square
 [coveralls-image]: https://img.shields.io/coveralls/jclo/lru/master.svg?style=flat-square
 [dependencies-image]: https://david-dm.org/jclo/lru/status.svg?theme=shields.io
 [devdependencies-image]: https://david-dm.org/jclo/lru/dev-status.svg?theme=shields.io
+[npm-bundle-size-image]: https://img.shields.io/bundlephobia/minzip/@mobilabs/lru.svg?style=flat-square
 [license-image]: https://img.shields.io/npm/l/@mobilabs/lru.svg?style=flat-square
 
 [npm-url]: https://www.npmjs.com/package/@mobilabs/lru
-[npm-install-url]: https://nodei.co/npm/@mobilabs/lru
-[node-url]: http://nodejs.org/download
-[download-url]: https://www.npmjs.com/package/@mobilabs/lru
+[release-url]: https://github.com/jclo/lru/tags
+[commit-url]: https://github.com/jclo/lru/commits/master
 [travis-url]: https://travis-ci.org/jclo/lru
 [coveralls-url]: https://coveralls.io/github/jclo/lru?branch=master
 [dependencies-url]: https://david-dm.org/jclo/lru
 [devdependencies-url]: https://david-dm.org/jclo/lru?type=dev
 [license-url]: http://opensource.org/licenses/MIT
-
-
-## License
-
-MIT.
+[npm-bundle-size-url]: https://img.shields.io/bundlephobia/minzip/@mobilabs/lru

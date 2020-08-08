@@ -1,8 +1,8 @@
-/* ***************************************************************************
+/** **************************************************************************
  *
- * A micro subset of the Overslash library.
+ * A ...
  *
- * _.js is just a literal object that contains a set of functions. It
+ * basic.js is just a literal object that contains a set of functions. It
  * can't be intantiated.
  *
  * Private Functions:
@@ -20,33 +20,35 @@
  *
  *
  *
- * @namespace    _
+ * @namespace    -
  * @dependencies none
  * @exports      -
  * @author       -
  * @since        0.0.0
  * @version      -
  * ************************************************************************ */
+/* global */
 /* eslint-disable no-underscore-dangle */
 
 'use strict';
 
 (function() {
-  // IIFE
-
-  // -- Module path
+  // START OF IIFE
 
 
-  // -- Local modules
+  // -- Module Path
 
 
-  // -- Local constants
+  // -- Local Modules
 
 
-  // -- Local variables
+  // -- Local Constants
 
 
-  // -- Public Static Methods ------------------------------------------------
+  // -- Local Variables
+
+
+  // -- Main -----------------------------------------------------------------
 
   _ = {
 
@@ -145,5 +147,8 @@
       return obj === parseFloat(obj) ? !!n : void 0;
     },
   };
+
+
+  // END OF IIFE
 }());
 /* eslint-enable no-underscore-dangle */

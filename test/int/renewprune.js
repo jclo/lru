@@ -10,8 +10,6 @@ const { expect } = require('chai')
 
 
 // -- Local modules
-const LRU = require('../../index.js')
-    ;
 
 
 // -- Local constants
@@ -21,7 +19,7 @@ const LRU = require('../../index.js')
 
 
 // -- Main
-module.exports = () => {
+module.exports = (LRU) => {
   describe('Test the renew and prune methods:', () => {
     describe('Test the renew method:', () => {
       it('Expects lru.has("a") after a timeout of 1s to return an "age" greater than 950.', (done) => {

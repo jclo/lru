@@ -10,8 +10,6 @@ const { expect } = require('chai')
 
 
 // -- Local modules
-const LRU = require('../../index.js')
-    ;
 
 
 // -- Local constants
@@ -21,7 +19,7 @@ const LRU = require('../../index.js')
 
 
 // -- Main
-module.exports = () => {
+module.exports = (LRU) => {
   describe('Test the has and remove methods:', () => {
     describe('Test the has method:', () => {
       const lru = LRU();

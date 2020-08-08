@@ -10,20 +10,16 @@ const { expect } = require('chai')
 
 
 // -- Local modules
-const LRU = require('../../index.js')
-    ;
 
 
 // -- Local constants
-const { _ } = LRU
-    ;
 
 
 // -- Local variables
 
 
 // -- Main
-module.exports = () => {
+module.exports = (LRU, _) => {
   describe('Test the subset of Overslash:', () => {
     describe('_.isUndefined():', () => {
       const a = undefined

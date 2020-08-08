@@ -1,5 +1,11 @@
 ### HEAD
 
+### 1.0.0 (August 8, 2020)
+
+  * Updated the build (thanks to ES6lib 1.0) to create both UMD and ES6 modules,
+  * ...,
+
+
 ### 0.0.3 (March 17, 2020)
 
   * Updated the project with the latest ES6lib boilerplate,

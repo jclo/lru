@@ -1,4 +1,4 @@
-/* ***************************************************************************
+/** **************************************************************************
  *
  * Implements the LRU methods.
  *
@@ -24,31 +24,33 @@
  *
  *
  *
- * @namespace    TLRU.Util.Public
+ * @namespace    -
  * @dependencies none
  * @exports      -
  * @author       -
  * @since        0.0.0
  * @version      -
  * ************************************************************************ */
+/* global TLRU */
 /* eslint-disable one-var, semi-style, no-underscore-dangle */
 
 'use strict';
 
 (function() {
-  // IIFE
+  // START OF IIFE
 
-  // -- Module path
+
+  // -- Module Path
   const Root = TLRU.Util.Public;
 
 
-  // -- Local modules
+  // -- Local Modules
 
 
-  // -- Local constants
+  // -- Local Constants
 
 
-  // -- Local variables
+  // -- Local Variables
 
 
   // -- Private Functions ----------------------------------------------------
@@ -371,5 +373,8 @@
     },
     /* eslint-enable no-param-reassign */
   });
+
+
+  // END OF IIFE
 }());
 /* eslint-enable one-var, semi-style, no-underscore-dangle */
