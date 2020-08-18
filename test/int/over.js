@@ -1,25 +1,26 @@
 // ESLint declarations:
 /* global describe, it */
-/* eslint one-var: 0, semi-style: 0, no-unused-expressions: 0 */
+/* eslint one-var: 0, semi-style: 0, no-underscore-dangle: 0,
+  no-unused-expressions: 0 */
 
 'use strict';
 
-// -- Node modules
+// -- Vendor Modules
 const { expect } = require('chai')
     ;
 
 
-// -- Local modules
+// -- Local Modules
 
 
-// -- Local constants
+// -- Local Constants
 
 
-// -- Local variables
+// -- Local Variables
 
 
 // -- Main
-module.exports = (LRU, _) => {
+module.exports = function(LRU, _) {
   describe('Test the subset of Overslash:', () => {
     describe('_.isUndefined():', () => {
       const a = undefined

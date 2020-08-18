@@ -4,53 +4,54 @@
 
 'use strict';
 
-// -- Node modules
+// -- Vendor Modules
 
 
-// -- Local modules
-const LRU        = require('../index.js')
-    , over       = require('./int/over')
-    , core       = require('./int/core')
-    , setget     = require('./int/setget')
-    , hasremove  = require('./int/hasremove')
-    , ced        = require('./int/countemptydump')
-    , renewprune = require('./int/renewprune')
-    , maxitage   = require('./int/maxitemsage')
-    , autoprune  = require('./int/autoprune')
+// -- Local Modules
+const LRU            = require('../index.js')
+    , pack           = require('../package.json')
+    , testlib        = require('./int/lib')
+
+    , testover       = require('./int/over')
+    , testsetget     = require('./int/setget')
+    , testhasremove  = require('./int/hasremove')
+    , testced        = require('./int/countemptydump')
+    , testrenewprune = require('./int/renewprune')
+    , testmaxitage   = require('./int/maxitemsage')
+    , testautoprune  = require('./int/autoprune')
     ;
 
 
-// -- Local constants
+// -- Local Constants
+const libname = 'LRU';
 
 
-// -- Local variables
+// -- Local Variables
 
 
 // -- Main
 describe('Test LRU:', () => {
-  const [_] = LRU._setTestMode();
-
   // Test the overslash subset:
-  over(LRU, _);
+  testover(LRU, LRU._setTestMode()[0]);
 
-  // Test the library and its constructor:
-  core(LRU);
+  // Test the library constructor:
+  testlib(LRU, libname, pack.version);
 
   // Test set and get:
-  setget(LRU);
+  testsetget(LRU);
 
   // Test has and remove:
-  hasremove(LRU);
+  testhasremove(LRU);
 
   // Test the count, empty and dump methods:
-  ced(LRU);
+  testced(LRU);
 
   // Test the renew and prune methods:
-  renewprune(LRU);
+  testrenewprune(LRU);
 
   // Test the cache overflow:
-  maxitage(LRU);
+  testmaxitage(LRU);
 
   // Test the automatic prune:
-  autoprune(LRU);
+  testautoprune(LRU);
 });

@@ -1,25 +1,26 @@
 // ESLint declarations:
 /* global describe, it */
-/* eslint one-var: 0, semi-style: 0, no-unused-expressions: 0 */
+/* eslint one-var: 0, semi-style: 0, no-underscore-dangle: 0,
+  no-unused-expressions: 0 */
 
 'use strict';
 
-// -- Node modules
+// -- Vendor Modules
 const { expect } = require('chai')
     ;
 
 
-// -- Local modules
+// -- Local Modules
 
 
-// -- Local constants
+// -- Local Constants
 
 
-// -- Local variables
+// -- Local Variables
 
 
 // -- Main
-module.exports = (LRU) => {
+module.exports = function(LRU) {
   describe('Test the has and remove methods:', () => {
     describe('Test the has method:', () => {
       const lru = LRU();

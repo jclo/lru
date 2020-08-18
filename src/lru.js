@@ -24,6 +24,7 @@
  *
  *
  * Public Methods:
+ *  . whoami                      returns the library name and version,
  *  . set                         adds a key/value pair to the cache,
  *  . get                         returns a key/value pair from the cache,
  *  . has                         checks if a key/value pair is in the cache,
@@ -123,7 +124,7 @@
   /* eslint-disable no-multi-spaces */
   LRU = function(options) {
     const obj = Object.create(methods);
-    obj.library = {
+    obj._library = {
       name: '{{lib:name}}',
       version: '{{lib:version}}',
     };
@@ -161,7 +162,8 @@
   };
   /* eslint-enable no-multi-spaces */
 
-  // Attaches a constant to LRU that provides the version of the lib.
+  // Attaches constants to LRU that provide name and version of the lib.
+  LRU.NAME = '{{lib:name}}';
   LRU.VERSION = '{{lib:version}}';
 
 
@@ -169,6 +171,7 @@
 
   /**
    * Returns the internal objects for testing purpose.
+   * (must not be deleted)
    *
    * @method ()
    * @private
@@ -185,6 +188,7 @@
 
   /**
    * Returns a reference to this LRU object.
+   * (must not be deleted)
    *
    * Nota:
    * Running LRU in noConflict mode, returns the LRU variable to its
@@ -196,7 +200,6 @@
    * @returns {Object}      returns the LRU object,
    * @since 0.0.0
    */
-  /* istanbul ignore next */
   LRU.noConflict = function() {
     /* eslint-disable-next-line no-param-reassign */
     root.LRU = previousLRU;
@@ -207,6 +210,20 @@
   // -- Public Methods -------------------------------------------------------
 
   methods = {
+
+    /**
+     * Returns the library name and version.
+     * (must not be deleted)
+     *
+     * @method ()
+     * @public
+     * @param {}            -,
+     * @returns {Object}    returns the library name and version,
+     * @since 0.0.0
+     */
+    whoami() {
+      return this._library;
+    },
 
     /**
      * Adds a key/value pair to the cache.

@@ -1,12 +1,12 @@
 /*! ****************************************************************************
- * LRU v1.0.0
+ * LRU v1.0.1
  *
  * An in-memory key/value cache based on the Least Recently Used algorithm.
  * (you can download it from npm or github repositories)
  * Copyright (c) 2020 Mobilabs <contact@mobilabs.fr> (http://www.mobilabs.fr).
  * Released under the MIT license. You may obtain a copy of the License
  * at: http://www.opensource.org/licenses/mit-license.php).
- * Built from ES6lib v1.0.0-beta.7.
+ * Built from ES6lib v1.0.0-beta.9.
  * ************************************************************************** */
 // ESLint declarations
 /* global define */
@@ -127,9 +127,9 @@ const $__ES6GLOB = {};
 
   /** **************************************************************************
    *
-   * A ...
+   * A subset of Overslash.
    *
-   * basic.js is just a literal object that contains a set of functions. It
+   * _.js is just a literal object that contains a set of functions. It
    * can't be intantiated.
    *
    * Private Functions:
@@ -683,6 +683,7 @@ const $__ES6GLOB = {};
    *
    *
    * Public Methods:
+   *  . whoami                      returns the library name and version,
    *  . set                         adds a key/value pair to the cache,
    *  . get                         returns a key/value pair from the cache,
    *  . has                         checks if a key/value pair is in the cache,
@@ -780,9 +781,9 @@ const $__ES6GLOB = {};
     /* eslint-disable no-multi-spaces */
     LRU = function(options) {
       const obj = Object.create(methods);
-      obj.library = {
+      obj._library = {
         name: 'LRU',
-        version: '1.0.0',
+        version: '1.0.1',
       };
 
       obj.db = {};
@@ -818,14 +819,16 @@ const $__ES6GLOB = {};
     };
     /* eslint-enable no-multi-spaces */
 
-    // Attaches a constant to LRU that provides the version of the lib.
-    LRU.VERSION = '1.0.0';
+    // Attaches constants to LRU that provide name and version of the lib.
+    LRU.NAME = 'LRU';
+    LRU.VERSION = '1.0.1';
 
 
     // -- Private Static Methods -----------------------------------------------
 
     /**
      * Returns the internal objects for testing purpose.
+     * (must not be deleted)
      *
      * @method ()
      * @private
@@ -842,6 +845,7 @@ const $__ES6GLOB = {};
 
     /**
      * Returns a reference to this LRU object.
+     * (must not be deleted)
      *
      * Nota:
      * Running LRU in noConflict mode, returns the LRU variable to its
@@ -853,7 +857,6 @@ const $__ES6GLOB = {};
      * @returns {Object}      returns the LRU object,
      * @since 0.0.0
      */
-    /* istanbul ignore next */
     LRU.noConflict = function() {
       /* eslint-disable-next-line no-param-reassign */
       root.LRU = previousLRU;
@@ -864,6 +867,20 @@ const $__ES6GLOB = {};
     // -- Public Methods -------------------------------------------------------
 
     methods = {
+
+      /**
+       * Returns the library name and version.
+       * (must not be deleted)
+       *
+       * @method ()
+       * @public
+       * @param {}            -,
+       * @returns {Object}    returns the library name and version,
+       * @since 0.0.0
+       */
+      whoami() {
+        return this._library;
+      },
 
       /**
        * Adds a key/value pair to the cache.

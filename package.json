@@ -1,6 +1,6 @@
 {
   "name": "@mobilabs/lru",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An in-memory key/value cache based on the Least Recently Used algorithm",
   "main": "_dist/lib/lru.js",
   "minified": "_dist/lib/lru.min.js",
@@ -51,7 +51,7 @@
     "coveralls": "^3.1.0",
     "cross-env": "^7.0.2",
     "del": "^5.1.0",
-    "eslint": "^7.6.0",
+    "eslint": "^7.7.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-plugin-import": "^2.22.0",
     "gulp": "^4.0.2",
