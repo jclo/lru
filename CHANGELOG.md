@@ -3,7 +3,7 @@
 ### 1.0.1 (August 18, 2020)
 
   * Added the method whoami,
-  * ...,
+  * Release.
 
 
 ### 1.0.0 (August 8, 2020)
