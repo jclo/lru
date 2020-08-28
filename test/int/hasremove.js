@@ -1,7 +1,6 @@
 // ESLint declarations:
 /* global describe, it */
-/* eslint one-var: 0, semi-style: 0, no-underscore-dangle: 0,
-  no-unused-expressions: 0 */
+/* eslint one-var: 0, semi-style: 0, no-underscore-dangle: 0 */
 
 'use strict';
 
@@ -69,7 +68,7 @@ module.exports = function(LRU) {
       lru.set('e', 'eee');
 
       it('Expects lru.remove("a") to return true.', () => {
-        expect(lru.remove('a')).to.be.true;
+        expect(lru.remove('a')).to.be.equal(true);
       });
 
       it('Expects lru.has("a") to return null.', () => {
@@ -85,11 +84,11 @@ module.exports = function(LRU) {
       });
 
       it('Expects lru.remove("b") to return true.', () => {
-        expect(lru.remove('b')).to.be.true;
+        expect(lru.remove('b')).to.be.equal(true);
       });
 
       it('Expects lru.remove("d") to return true.', () => {
-        expect(lru.remove('d')).to.be.true;
+        expect(lru.remove('d')).to.be.equal(true);
       });
     });
   });

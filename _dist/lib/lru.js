@@ -1,12 +1,12 @@
 /*! ****************************************************************************
- * LRU v1.0.1
+ * LRU v1.0.2
  *
  * An in-memory key/value cache based on the Least Recently Used algorithm.
  * (you can download it from npm or github repositories)
  * Copyright (c) 2020 Mobilabs <contact@mobilabs.fr> (http://www.mobilabs.fr).
  * Released under the MIT license. You may obtain a copy of the License
  * at: http://www.opensource.org/licenses/mit-license.php).
- * Built from ES6lib v1.0.0-beta.9.
+ * Built from ES6lib v1.0.1.
  * ************************************************************************** */
 // ESLint declarations
 /* global define */
@@ -736,8 +736,8 @@
      *
      * @function ()
      * @private
-     * @param {}            -,
-     * @returns {}          -,
+     * @param {}              -,
+     * @returns {}            -,
      * @since 0.0.0
      */
     function startPruneCounter() {
@@ -752,8 +752,8 @@
      *
      * @function (arg1)
      * @private
-     * @param {Object}      the context object,
-     * @returns {}          -,
+     * @param {Object}        the context object,
+     * @returns {}            -,
      * @since 0.0.0
      */
     function prune(that) {
@@ -782,7 +782,7 @@
       const obj = Object.create(methods);
       obj._library = {
         name: 'LRU',
-        version: '1.0.1',
+        version: '1.0.2',
       };
 
       obj.db = {};
@@ -820,7 +820,7 @@
 
     // Attaches constants to LRU that provide name and version of the lib.
     LRU.NAME = 'LRU';
-    LRU.VERSION = '1.0.1';
+    LRU.VERSION = '1.0.2';
 
 
     // -- Private Static Methods -----------------------------------------------

@@ -31,7 +31,7 @@
  * @since        0.0.0
  * @version      -
  * ************************************************************************ */
-/* global TLRU */
+/* global TLRU, extend */
 /* eslint-disable one-var, semi-style, no-underscore-dangle */
 
 'use strict';

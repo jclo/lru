@@ -1,6 +1,6 @@
 {
   "name": "@mobilabs/lru",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An in-memory key/value cache based on the Least Recently Used algorithm",
   "main": "_dist/lib/lru.js",
   "minified": "_dist/lib/lru.min.js",
@@ -61,10 +61,11 @@
     "gulp-replace": "^1.0.0",
     "gulp-uglify-es": "^2.0.0",
     "husky": "^4.2.5",
-    "mocha": "^8.1.1",
+    "mocha": "^8.1.2",
     "nyc": "^15.1.0",
-    "open": "^7.1.0",
-    "opener": "^1.5.1"
+    "open": "^7.2.0",
+    "opener": "^1.5.1",
+    "@mobilabs/es6lib": "1.0.1"
   },
   "publishConfig": {
     "access": "public"

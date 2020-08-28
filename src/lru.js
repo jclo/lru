@@ -80,8 +80,8 @@
    *
    * @function ()
    * @private
-   * @param {}            -,
-   * @returns {}          -,
+   * @param {}              -,
+   * @returns {}            -,
    * @since 0.0.0
    */
   function startPruneCounter() {
@@ -96,8 +96,8 @@
    *
    * @function (arg1)
    * @private
-   * @param {Object}      the context object,
-   * @returns {}          -,
+   * @param {Object}        the context object,
+   * @returns {}            -,
    * @since 0.0.0
    */
   function prune(that) {
