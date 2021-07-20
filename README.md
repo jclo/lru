@@ -152,7 +152,7 @@ Enjoy!
 [npm-url]: https://www.npmjs.com/package/@mobilabs/lru
 [release-url]: https://github.com/jclo/lru/tags
 [commit-url]: https://github.com/jclo/lru/commits/master
-[travis-url]: https://travis-ci.org/jclo/lru
+[travis-url]: https://travis-ci.com/jclo/lru
 [coveralls-url]: https://coveralls.io/github/jclo/lru?branch=master
 [dependencies-url]: https://david-dm.org/jclo/lru
 [devdependencies-url]: https://david-dm.org/jclo/lru?type=dev

@@ -1,5 +1,11 @@
 ### HEAD
 
+### 1.0.3 (July 20, 2021)
+
+  * Updated the project dependencies,
+  * ...
+
+
 ### 1.0.2 (August 28, 2020)
 
   * Updated the project dependencies,

@@ -8,7 +8,7 @@
 
 
 // -- Local Modules
-const LRU            = require('../index.js')
+const LRU            = require('../index')
     , pack           = require('../package.json')
     , testlib        = require('./int/lib')
 
@@ -35,7 +35,7 @@ describe('Test LRU:', () => {
   testover(LRU, LRU._setTestMode()[0]);
 
   // Test the library constructor:
-  testlib(LRU, libname, pack.version);
+  testlib(LRU, libname, pack.version, 'without new');
 
   // Test set and get:
   testsetget(LRU);

@@ -73,6 +73,7 @@
     , timeToPrune
     ;
 
+
   // -- Private Functions ----------------------------------------------------
 
   /**
@@ -191,8 +192,8 @@
    * (must not be deleted)
    *
    * Nota:
-   * Running LRU in noConflict mode, returns the LRU variable to its
-   * _ previous owner.
+   * Running LRU in noConflict mode, returns the LRU variable to
+   * its previous owner.
    *
    * @method ()
    * @public

@@ -1,12 +1,12 @@
 /*! ****************************************************************************
- * LRU v1.0.2
+ * LRU v1.0.3
  *
  * An in-memory key/value cache based on the Least Recently Used algorithm.
  * (you can download it from npm or github repositories)
- * Copyright (c) 2020 Mobilabs <contact@mobilabs.fr> (http://www.mobilabs.fr).
+ * Copyright (c) 2021 Mobilabs <contact@mobilabs.fr> (http://www.mobilabs.fr).
  * Released under the MIT license. You may obtain a copy of the License
  * at: http://www.opensource.org/licenses/mit-license.php).
- * Built from ES6lib v1.0.1.
+ * Built from ES6lib v1.0.11.
  * ************************************************************************** */
 // ESLint declarations
 /* global define */
@@ -59,8 +59,8 @@
    * the public static or object methods when the Javascript VM browses the
    * library from the top to the bottom.
    *
-   * extend.js is just a literal object that contains a set of functions. It
-   * can't be intantiated.
+   * extend.js is just a literal object that contains a set of functions.
+   * It can't be instantiated.
    *
    * Private Functions:
    *  . none,
@@ -729,6 +729,7 @@
       , timeToPrune
       ;
 
+
     // -- Private Functions ----------------------------------------------------
 
     /**
@@ -782,7 +783,7 @@
       const obj = Object.create(methods);
       obj._library = {
         name: 'LRU',
-        version: '1.0.2',
+        version: '1.0.3',
       };
 
       obj.db = {};
@@ -820,7 +821,7 @@
 
     // Attaches constants to LRU that provide name and version of the lib.
     LRU.NAME = 'LRU';
-    LRU.VERSION = '1.0.2';
+    LRU.VERSION = '1.0.3';
 
 
     // -- Private Static Methods -----------------------------------------------
@@ -847,8 +848,8 @@
      * (must not be deleted)
      *
      * Nota:
-     * Running LRU in noConflict mode, returns the LRU variable to its
-     * _ previous owner.
+     * Running LRU in noConflict mode, returns the LRU variable to
+     * its previous owner.
      *
      * @method ()
      * @public
