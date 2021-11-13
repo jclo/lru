@@ -1,12 +1,12 @@
 /*! ****************************************************************************
- * LRU v1.0.3
+ * LRU v1.0.4
  *
  * An in-memory key/value cache based on the Least Recently Used algorithm.
  * (you can download it from npm or github repositories)
  * Copyright (c) 2021 Mobilabs <contact@mobilabs.fr> (http://www.mobilabs.fr).
  * Released under the MIT license. You may obtain a copy of the License
  * at: http://www.opensource.org/licenses/mit-license.php).
- * Built from ES6lib v1.0.11.
+ * Built from ES6lib v1.0.12.
  * ************************************************************************** */
 // ESLint declarations
 /* global define */
@@ -784,7 +784,7 @@ const $__ES6GLOB = {};
       const obj = Object.create(methods);
       obj._library = {
         name: 'LRU',
-        version: '1.0.3',
+        version: '1.0.4',
       };
 
       obj.db = {};
@@ -822,7 +822,7 @@ const $__ES6GLOB = {};
 
     // Attaches constants to LRU that provide name and version of the lib.
     LRU.NAME = 'LRU';
-    LRU.VERSION = '1.0.3';
+    LRU.VERSION = '1.0.4';
 
 
     // -- Private Static Methods -----------------------------------------------

@@ -1,4 +1,4 @@
-/* eslint one-var: 0, import/no-extraneous-dependencies: 0, semi-style: 0
+/* eslint one-var: 0, import/no-extraneous-dependencies: 0, semi-style: 0,
   object-curly-newline: 0 */
 
 'use strict';
@@ -96,7 +96,8 @@ function delcore(done) {
 
 // -- Gulp Public Task(s)
 module.exports = series(
-  clean, docore,
+  clean,
+  docore,
   parallel(doumdlib, domodule),
   delcore,
 );
