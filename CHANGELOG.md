@@ -1,5 +1,12 @@
 ### HEAD
 
+### 1.0.5 (November 13, 2021)
+
+  * Updated the project dependencies,
+  * Updated the copyright,
+  * ...,
+
+
 ### 1.0.4 (November 13, 2021)
 
   * Updated the project dependencies,
