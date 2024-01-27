@@ -2,12 +2,10 @@
 
 [![NPM version][npm-image]][npm-url]
 [![GitHub last commit][commit-image]][commit-url]
-[![Travis CI][travis-image]][travis-url]
+[![Github workflow][ci-image]][ci-url]
 [![Test coverage][coveralls-image]][coveralls-url]
 [![npm bundle size][npm-bundle-size-image]][npm-bundle-size-url]
 [![License][license-image]](LICENSE.md)
-<!-- [![Dependencies status][dependencies-image]][dependencies-url]
-[![Dev Dependencies status][devdependencies-image]][devdependencies-url] -->
 
 
 `LRU` is an in-memory key/value cache that relies on the Least Recently Used algorithm to maintain its size in a predefined limits.
@@ -142,19 +140,15 @@ Enjoy!
 [npm-image]: https://img.shields.io/npm/v/@mobilabs/lru.svg?logo=npm&logoColor=fff&label=NPM+package
 [release-image]: https://img.shields.io/github/release/jclo/lru.svg?include_prereleases
 [commit-image]: https://img.shields.io/github/last-commit/jclo/lru.svg?logo=github
-[travis-image]: https://img.shields.io/travis/com/jclo/lru.svg?logo=travis-ci&logoColor=fff
+[ci-image]: https://github.com/jclo/lru/actions/workflows/ci.yml/badge.svg
 [coveralls-image]: https://img.shields.io/coveralls/jclo/lru/master.svg?&logo=coveralls
-[dependencies-image]: https://david-dm.org/jclo/lru/status.svg?theme=shields.io
-[devdependencies-image]: https://david-dm.org/jclo/lru/dev-status.svg?theme=shields.io
 [npm-bundle-size-image]: https://img.shields.io/bundlephobia/minzip/@mobilabs/lru.svg
 [license-image]: https://img.shields.io/npm/l/@mobilabs/lru.svg
 
 [npm-url]: https://www.npmjs.com/package/@mobilabs/lru
 [release-url]: https://github.com/jclo/lru/tags
 [commit-url]: https://github.com/jclo/lru/commits/master
-[travis-url]: https://app.travis-ci.com/jclo/lru?branch=main
+[ci-url]: https://github.com/jclo/lru/actions/workflows/ci.yml
 [coveralls-url]: https://coveralls.io/github/jclo/lru?branch=master
-[dependencies-url]: https://david-dm.org/jclo/lru
-[devdependencies-url]: https://david-dm.org/jclo/lru?type=dev
-[license-url]: http://opensource.org/licenses/MIT
 [npm-bundle-size-url]: https://img.shields.io/bundlephobia/minzip/@mobilabs/lru
+[license-url]: http://opensource.org/licenses/MIT

@@ -1,5 +1,11 @@
 ### HEAD
 
+### 1.0.6 (January 27, 2024)
+
+  * Updated the project with ESLib v2.1 (no Gulp, Github Actions),
+  * ...,
+
+
 ### 1.0.5 (January 26, 2022)
 
   * Updated the project dependencies,
