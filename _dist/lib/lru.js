@@ -1,5 +1,5 @@
 /*! ****************************************************************************
- * LRU v1.0.5
+ * LRU v1.0.6
  *
  * An in-memory key/value cache based on the Least Recently Used algorithm.
  * (you can download it from npm or github repositories)
@@ -784,7 +784,7 @@
       const obj = Object.create(methods);
       obj._library = {
         name: 'LRU',
-        version: '1.0.5',
+        version: '1.0.6',
       };
 
       obj.db = {};
@@ -822,7 +822,7 @@
 
     // Attaches constants to LRU that provide name and version of the lib.
     LRU.NAME = 'LRU';
-    LRU.VERSION = '1.0.5';
+    LRU.VERSION = '1.0.6';
 
 
     // -- Private Static Methods -----------------------------------------------

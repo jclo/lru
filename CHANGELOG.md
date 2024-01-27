@@ -4,7 +4,7 @@
 
   * Updated the project with ESLib v2.1 (no Gulp, Github Actions),
   * Added .github/workflows/ci.yml file,
-  * ...,
+  * Release.
 
 
 ### 1.0.5 (January 26, 2022)

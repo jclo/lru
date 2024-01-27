@@ -1,6 +1,6 @@
 {
   "name": "@mobilabs/lru",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "An in-memory key/value cache based on the Least Recently Used algorithm",
   "main": "_dist/lib/lru.js",
   "minified": "_dist/lib/lru.min.js",
