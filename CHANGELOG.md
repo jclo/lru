@@ -3,6 +3,7 @@
 ### 1.0.6 (January 27, 2024)
 
   * Updated the project with ESLib v2.1 (no Gulp, Github Actions),
+  * Added .github/workflows/ci.yml file,
   * ...,
 
 
