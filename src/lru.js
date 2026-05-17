@@ -44,10 +44,8 @@
  * @since        0.0.0
  * @version      -
  * ************************************************************************ */
-/* global TLRU, root, _ */
-/* eslint-disable one-var, semi-style, no-underscore-dangle */
-
-'use strict';
+/* global Tree, root, _, LRU */
+/* eslint-disable no-multi-spaces */
 
 (function() {
   // START OF IIFE
@@ -57,19 +55,14 @@
 
 
   // -- Local Modules
-  const Util = TLRU.Util.Public;
+  const Util = Tree.Util.Public;
 
 
   // -- Local Constants
-  // Saves the previous value of the library variable, so that it can be
-  // restored later on, if noConflict is used.
-  const previousLRU = root.LRU
-      ;
 
 
   // -- Local Variables
-  let methods
-    , pruneInterval
+  let pruneInterval
     , timeToPrune
     ;
 
@@ -122,7 +115,6 @@
    * @returns {Object}      returns the LRU object,
    * @since 0.0.0
    */
-  /* eslint-disable no-multi-spaces */
   LRU = function(options) {
     const obj = Object.create(methods);
     obj._library = {
@@ -161,11 +153,14 @@
 
     return obj;
   };
-  /* eslint-enable no-multi-spaces */
 
   // Attaches constants to LRU that provide name and version of the lib.
   LRU.NAME = '{{lib:name}}';
   LRU.VERSION = '{{lib:version}}';
+
+  // Saves the previous value of the library variable, so that it can be
+  // restored later on, if noConflict is used.
+  const previousLRU = root.LRU;
 
 
   // -- Private Static Methods -----------------------------------------------
@@ -202,7 +197,6 @@
    * @since 0.0.0
    */
   LRU.noConflict = function() {
-    /* eslint-disable-next-line no-param-reassign */
     root.LRU = previousLRU;
     return this;
   };
@@ -210,7 +204,7 @@
 
   // -- Public Methods -------------------------------------------------------
 
-  methods = {
+  const methods = {
 
     /**
      * Returns the library name and version.
@@ -361,4 +355,4 @@
 
   // END OF IIFE
 }());
-/* eslint-enable one-var, semi-style, no-underscore-dangle */
+/* eslint-enable no-multi-spaces */

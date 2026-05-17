@@ -1,12 +1,10 @@
 // ESLint declarations:
 /* global describe, it */
-/* eslint one-var: 0, semi-style: 0, no-underscore-dangle: 0 */
+/* - */
 
-'use strict';
 
 // -- Vendor Modules
-const { expect } = require('chai')
-    ;
+import { expect } from 'chai';
 
 
 // -- Local Modules
@@ -19,7 +17,7 @@ const { expect } = require('chai')
 
 
 // -- Main
-module.exports = function(LRU) {
+export default function(LRU) {
   describe('Test automatic prune:', () => {
     it('Expects lru.count() to return the value 5.', () => {
       const lru = LRU({ maxAge: 500, prune: 1000 });
@@ -46,3 +44,6 @@ module.exports = function(LRU) {
     });
   });
 };
+
+
+// - oOo --

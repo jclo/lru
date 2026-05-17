@@ -1,12 +1,24 @@
-/* eslint one-var: 0, semi-style: 0 */
+/** ************************************************************************
+ *
+ * Configuration file.
+ *
+ *
+ *
+ * @namespace    -
+ * @dependencies none
+ * @exports      -
+ * @author       -
+ * @since        0.0.0
+ * @version      -
+ * ********************************************************************** */
+/* - */
 
-'use strict';
 
 // -- Vendor Modules
 
 
 // -- Local Modules
-const pack = require('../package.json');
+import pack from '../package.json' with { type: 'json'};
 
 
 // -- Local Constants
@@ -20,7 +32,7 @@ const libname = 'LRU'
 
 // -- Main
 
-module.exports = {
+export default {
   ES6GLOB: '$__ES6GLOB',
   dist: './_dist',
   libdir: './lib',
@@ -29,8 +41,11 @@ module.exports = {
   index: './index.js',
   distlink: `./_dist/lib/${name}.js`,
 
-  // These are the Javascript files required to build the library.
-  /* eslint-disable no-multi-spaces */
+  // These are the Javascript files required to build the library. Choose one
+  // pattern among these ones. The library can include only the header file,
+  // a core file and the footer file. The files 'basic.js', 'functional.js',
+  // 'functional-shared.js', 'prototypal.js', 'pseudoclassical.js' and
+  // 'pseudoclassical-auto.js' are mutually exclusives.
   src: [
     // These three files (_header, _head.js and extend.js) must be declared
     // in this order as they create the umd module, define the global
@@ -43,11 +58,17 @@ module.exports = {
     './src/util/_.js',
     './src/util/lru.js',
     './src/lru.js',
+    // './src/basic.js',
+    // './src/basicplus.js',
+    // './src/functional.js',
+    // './src/functional-shared.js',
+    // './src/prototypal.js',
+    // './src/pseudoclassical.js',
+    // './src/pseudoclassical-auto.js',
 
     // This file must always be the last one as it closes the umd module.
     './src/_footer',
   ],
-  /* eslint-enable no-multi-spaces */
 
   webfiles: [
     // These are the files to copy to the root path of the web app,
@@ -64,7 +85,7 @@ module.exports = {
       ` * Copyright (c) ${(new Date()).getFullYear()} ${pack.author.name} <${pack.author.email}> (${pack.author.url}).`,
       ' * Released under the MIT license. You may obtain a copy of the License',
       ' * at: http://www.opensource.org/licenses/mit-license.php).',
-      ' * Built from ES6lib v2.1.3.',
+      ' * Built from ES6lib v3.0.0-beta.1.3.',
       ' * ************************************************************************** */',
       ''].join('\n');
   },

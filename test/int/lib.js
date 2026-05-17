@@ -1,13 +1,10 @@
 // ESLint declarations:
 /* global describe, it */
-/* eslint one-var: 0, semi-style: 0, no-underscore-dangle: 0,
-  no-unused-expressions: 0 */
+/* - */
 
-'use strict';
 
 // -- Vendor Modules
-const { expect } = require('chai')
-    ;
+import { expect } from 'chai';
 
 
 // -- Local Modules
@@ -28,7 +25,7 @@ const LIBPROPS = 0
 
 
 // -- Main
-module.exports = function(LRU, libname, version, type) {
+export default function(LRU, libname, version, type) {
   describe('LRU introspection:', () => {
     describe('Test the nature of LRU:', () => {
       it('Expects LRU to be a function.', () => {
@@ -76,7 +73,7 @@ module.exports = function(LRU, libname, version, type) {
         //   it('Expects LRU to own the property ... to be completed or ... removed!', () => {
         //     expect(true).to.be.equal(true);
         //   });
-        //
+
         //   describe('Test the owned specific custom properties:', () => {
         //     it('Expects LRU the property ... to be completed or ... removed!', () => {
         //       expect(true).to.be.equal(true);
@@ -271,3 +268,6 @@ module.exports = function(LRU, libname, version, type) {
     });
   });
 };
+
+
+// - oOo --

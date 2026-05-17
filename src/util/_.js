@@ -2,8 +2,8 @@
  *
  * A subset of Overslash.
  *
- * _.js is just a literal object that contains a set of functions. It
- * can't be intantiated.
+ * _.js is just a literal object that contains a set of functions.
+ * It can't be instantiated.
  *
  * Private Functions:
  *  . none,
@@ -28,9 +28,7 @@
  * @version      -
  * ************************************************************************ */
 /* global */
-/* eslint-disable no-underscore-dangle */
-
-'use strict';
+/* - */
 
 (function() {
   // START OF IIFE
@@ -48,7 +46,11 @@
   // -- Local Variables
 
 
-  // -- Main -----------------------------------------------------------------
+  // -- Private Functions ----------------------------------------------------
+  // none,
+
+
+  // -- Public Static Methods ------------------------------------------------
 
   _ = {
 
@@ -141,14 +143,12 @@
      * @returns {Boolean}   returns true (odd), false (even) or undefined (not a number),
      * @since 0.0.0
      */
-    /* eslint-disable no-void */
     isOdd(obj) {
       const n = obj % 2;
       return obj === parseFloat(obj) ? !!n : void 0;
     },
   };
 
-
   // END OF IIFE
 }());
-/* eslint-enable no-underscore-dangle */
+/* - */

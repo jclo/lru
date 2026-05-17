@@ -2,8 +2,8 @@
  *
  * Implements the LRU methods.
  *
- * lru.js is just a literal object that contains a set of functions. It
- * can't be intantiated.
+ * lru.js is just a literal object that contains a set of functions.
+ * It can't be instantiated.
  *
  * Private Functions:
  *  . _findLRU                    searches for the newest LRU key/value,
@@ -31,17 +31,15 @@
  * @since        0.0.0
  * @version      -
  * ************************************************************************ */
-/* global TLRU, extend */
-/* eslint-disable one-var, semi-style, no-underscore-dangle */
-
-'use strict';
+/* global Tree, extend */
+/* - */
 
 (function() {
   // START OF IIFE
 
 
   // -- Module Path
-  const Root = TLRU.Util.Public;
+  const Root = Tree.Util.Public;
 
 
   // -- Local Modules
@@ -64,13 +62,11 @@
    * @returns {}            -,
    * @since 0.0.0
    */
-  /* eslint-disable no-param-reassign */
   function _findLRU(db) {
     while (db.lru < db.mru && db.list[db.lru] === undefined) {
       db.lru += 1;
     }
   }
-  /* eslint-enable no-param-reassign */
 
   /**
    * Checkes if the key/value pair hasn't exceeded the max age.
@@ -96,7 +92,6 @@
    * @returns {}            -,
    * @since 0.0.0
    */
-  /* eslint-disable no-param-reassign */
   function _manageOverflow(db) {
     let oldest;
 
@@ -110,7 +105,6 @@
       _findLRU(db);
     }
   }
-  /* eslint-enable no-param-reassign */
 
   /**
    * Returns the selected key/value pair.
@@ -151,7 +145,6 @@
      * @returns {Object}    returns the added key/value pair,
      * @since 0.0.0
      */
-    /* eslint-disable no-param-reassign */
     set(db, key, value, options) {
       let oldstamp;
 
@@ -185,7 +178,7 @@
       }
       return _generateOutput(db, key);
     },
-    /* eslint-enable no-param-reassign */
+
 
     /**
      * Returns the value and age of the requested key.
@@ -201,7 +194,6 @@
      * @returns {Object}    returns the requested key/value pair or null,
      * @since 0.0.0
      */
-    /* eslint-disable no-param-reassign */
     get(db, key) {
       let o;
 
@@ -219,7 +211,6 @@
       }
       return o;
     },
-    /* eslint-enable no-param-reassign */
 
     /**
      * Checks if the requested key is in the cache.
@@ -254,7 +245,6 @@
      * @returns {Object}    returns true if is done, otherwise null,
      * @since 0.0.0
      */
-    /* eslint-disable no-param-reassign */
     remove(db, key) {
       if (!db.cache[key]) {
         return null;
@@ -273,7 +263,6 @@
       }
       return true;
     },
-    /* eslint-enable no-param-reassign */
 
     /**
      * Empties the cache.
@@ -284,7 +273,6 @@
      * @returns {}          -,
      * @since 0.0.0
      */
-    /* eslint-disable no-param-reassign */
     empty(db) {
       db.cache = {};
       db.list = {};
@@ -292,7 +280,6 @@
       db.mru = 0;
       db.items = 0;
     },
-    /* eslint-enable no-param-reassign */
 
     /**
      * Dumps the content of the cache.
@@ -328,7 +315,6 @@
      * @returns {Object}    -,
      * @since 0.0.0
      */
-    /* eslint-disable no-param-reassign */
     prune(db) {
       const newlist = {};
       let stamps;
@@ -352,7 +338,6 @@
       }
       db.list = newlist;
     },
-    /* eslint-enable no-param-reassign */
 
     /**
      * Sets to zero the age of an existing key.
@@ -363,7 +348,6 @@
      * @returns {Object}    -,
      * @since 0.0.0
      */
-    /* eslint-disable no-param-reassign */
     renew(db, key) {
       if (db.cache[key]) {
         db.cache[key].birth = new Date();
@@ -371,10 +355,8 @@
       }
       return null;
     },
-    /* eslint-enable no-param-reassign */
   });
-
 
   // END OF IIFE
 }());
-/* eslint-enable one-var, semi-style, no-underscore-dangle */
+/* - */

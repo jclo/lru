@@ -3,9 +3,8 @@
  * level of this module and are accessible to all. So, they are considered
  * as reserved words for this library.
  * ************************************************************************ */
-/* eslint-disable one-var, no-unused-vars, semi-style */
-
-'use strict';
+/* global */
+/* eslint-disable no-unused-vars */
 
 let LRU
   , extend
@@ -13,10 +12,10 @@ let LRU
   ;
 
 // Tree is an internal object that links all the internal modules.
-const TLRU = {
+const Tree = {
   Util: {
     Public: {},
   },
 };
 
-/* eslint-enable one-var, no-unused-vars, semi-style */
+/* eslint-enable no-unused-vars */

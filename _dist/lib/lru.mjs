@@ -1,12 +1,12 @@
 /*! ****************************************************************************
- * LRU v1.0.6
+ * LRU v2.0.0-alpha.0.0
  *
  * An in-memory key/value cache based on the Least Recently Used algorithm.
  * (you can download it from npm or github repositories)
- * Copyright (c) 2024 Mobilabs <contact@mobilabs.fr> (http://www.mobilabs.fr).
+ * Copyright (c) 2026 Mobilabs <contact@mobilabs.fr> (https://www.mobilabs.fr).
  * Released under the MIT license. You may obtain a copy of the License
  * at: http://www.opensource.org/licenses/mit-license.php).
- * Built from ES6lib v2.1.3.
+ * Built from ES6lib v3.0.0-beta.1.3.
  * ************************************************************************** */
 // ESLint declarations
 /* global define */
@@ -23,11 +23,9 @@ const $__ES6GLOB = {};
     // Node. Does not work with strict CommonJS, but
     // only CommonJS-like environments that support module.exports,
     // like Node.
-    /* eslint-disable-next-line no-param-reassign */
     module.exports = factory(root);
   } else {
     // Browser globals.
-    /* eslint-disable-next-line no-param-reassign */
     root.LRU = factory(root);
   }
   /* c8 ignore stop */
@@ -39,7 +37,8 @@ const $__ES6GLOB = {};
    * level of this module and are accessible to all. So, they are considered
    * as reserved words for this library.
    * ************************************************************************ */
-  /* eslint-disable one-var, no-unused-vars, semi-style */
+  /* - */
+  /* eslint-disable no-unused-vars */
 
   let LRU
     , extend
@@ -47,13 +46,13 @@ const $__ES6GLOB = {};
     ;
 
   // Tree is an internal object that links all the internal modules.
-  const TLRU = {
+  const Tree = {
     Util: {
       Public: {},
     },
   };
 
-  /* eslint-enable one-var, no-unused-vars, semi-style */
+  /* eslint-enable no-unused-vars */
 
   /** **************************************************************************
    *
@@ -81,7 +80,7 @@ const $__ES6GLOB = {};
    * @version      -
    * ************************************************************************ */
   /* - */
-  /* - */
+  /* eslint-disable no-undef */
 
   (function() {
     // START OF IIFE
@@ -117,21 +116,20 @@ const $__ES6GLOB = {};
       const keys = Object.keys(methods);
 
       for (let i = 0; i < keys.length; i++) {
-        /* eslint-disable-next-line no-param-reassign */
         object[keys[i]] = methods[keys[i]];
       }
     };
 
     // END OF IIFE
   }());
-  /* - */
+  /* eslint-enable no-undef */
 
   /** **************************************************************************
    *
    * A subset of Overslash.
    *
-   * _.js is just a literal object that contains a set of functions. It
-   * can't be intantiated.
+   * _.js is just a literal object that contains a set of functions.
+   * It can't be instantiated.
    *
    * Private Functions:
    *  . none,
@@ -156,7 +154,7 @@ const $__ES6GLOB = {};
    * @version      -
    * ************************************************************************ */
   /* - */
-  /* eslint-disable no-underscore-dangle */
+  /* - */
 
   (function() {
     // START OF IIFE
@@ -174,7 +172,11 @@ const $__ES6GLOB = {};
     // -- Local Variables
 
 
-    // -- Main -----------------------------------------------------------------
+    // -- Private Functions ----------------------------------------------------
+    // none,
+
+
+    // -- Public Static Methods ------------------------------------------------
 
     _ = {
 
@@ -267,24 +269,22 @@ const $__ES6GLOB = {};
        * @returns {Boolean}   returns true (odd), false (even) or undefined (not a number),
        * @since 0.0.0
        */
-      /* eslint-disable no-void */
       isOdd(obj) {
         const n = obj % 2;
         return obj === parseFloat(obj) ? !!n : void 0;
       },
     };
 
-
     // END OF IIFE
   }());
-  /* eslint-enable no-underscore-dangle */
+  /* - */
 
   /** **************************************************************************
    *
    * Implements the LRU methods.
    *
-   * lru.js is just a literal object that contains a set of functions. It
-   * can't be intantiated.
+   * lru.js is just a literal object that contains a set of functions.
+   * It can't be instantiated.
    *
    * Private Functions:
    *  . _findLRU                    searches for the newest LRU key/value,
@@ -313,14 +313,14 @@ const $__ES6GLOB = {};
    * @version      -
    * ************************************************************************ */
   /* - */
-  /* eslint-disable one-var, semi-style, no-underscore-dangle */
+  /* - */
 
   (function() {
     // START OF IIFE
 
 
     // -- Module Path
-    const Root = TLRU.Util.Public;
+    const Root = Tree.Util.Public;
 
 
     // -- Local Modules
@@ -343,13 +343,11 @@ const $__ES6GLOB = {};
      * @returns {}            -,
      * @since 0.0.0
      */
-    /* eslint-disable no-param-reassign */
     function _findLRU(db) {
       while (db.lru < db.mru && db.list[db.lru] === undefined) {
         db.lru += 1;
       }
     }
-    /* eslint-enable no-param-reassign */
 
     /**
      * Checkes if the key/value pair hasn't exceeded the max age.
@@ -375,7 +373,6 @@ const $__ES6GLOB = {};
      * @returns {}            -,
      * @since 0.0.0
      */
-    /* eslint-disable no-param-reassign */
     function _manageOverflow(db) {
       let oldest;
 
@@ -389,7 +386,6 @@ const $__ES6GLOB = {};
         _findLRU(db);
       }
     }
-    /* eslint-enable no-param-reassign */
 
     /**
      * Returns the selected key/value pair.
@@ -430,7 +426,6 @@ const $__ES6GLOB = {};
        * @returns {Object}    returns the added key/value pair,
        * @since 0.0.0
        */
-      /* eslint-disable no-param-reassign */
       set(db, key, value, options) {
         let oldstamp;
 
@@ -464,7 +459,7 @@ const $__ES6GLOB = {};
         }
         return _generateOutput(db, key);
       },
-      /* eslint-enable no-param-reassign */
+
 
       /**
        * Returns the value and age of the requested key.
@@ -480,7 +475,6 @@ const $__ES6GLOB = {};
        * @returns {Object}    returns the requested key/value pair or null,
        * @since 0.0.0
        */
-      /* eslint-disable no-param-reassign */
       get(db, key) {
         let o;
 
@@ -498,7 +492,6 @@ const $__ES6GLOB = {};
         }
         return o;
       },
-      /* eslint-enable no-param-reassign */
 
       /**
        * Checks if the requested key is in the cache.
@@ -533,7 +526,6 @@ const $__ES6GLOB = {};
        * @returns {Object}    returns true if is done, otherwise null,
        * @since 0.0.0
        */
-      /* eslint-disable no-param-reassign */
       remove(db, key) {
         if (!db.cache[key]) {
           return null;
@@ -552,7 +544,6 @@ const $__ES6GLOB = {};
         }
         return true;
       },
-      /* eslint-enable no-param-reassign */
 
       /**
        * Empties the cache.
@@ -563,7 +554,6 @@ const $__ES6GLOB = {};
        * @returns {}          -,
        * @since 0.0.0
        */
-      /* eslint-disable no-param-reassign */
       empty(db) {
         db.cache = {};
         db.list = {};
@@ -571,7 +561,6 @@ const $__ES6GLOB = {};
         db.mru = 0;
         db.items = 0;
       },
-      /* eslint-enable no-param-reassign */
 
       /**
        * Dumps the content of the cache.
@@ -607,7 +596,6 @@ const $__ES6GLOB = {};
        * @returns {Object}    -,
        * @since 0.0.0
        */
-      /* eslint-disable no-param-reassign */
       prune(db) {
         const newlist = {};
         let stamps;
@@ -631,7 +619,6 @@ const $__ES6GLOB = {};
         }
         db.list = newlist;
       },
-      /* eslint-enable no-param-reassign */
 
       /**
        * Sets to zero the age of an existing key.
@@ -642,7 +629,6 @@ const $__ES6GLOB = {};
        * @returns {Object}    -,
        * @since 0.0.0
        */
-      /* eslint-disable no-param-reassign */
       renew(db, key) {
         if (db.cache[key]) {
           db.cache[key].birth = new Date();
@@ -650,13 +636,11 @@ const $__ES6GLOB = {};
         }
         return null;
       },
-      /* eslint-enable no-param-reassign */
     });
-
 
     // END OF IIFE
   }());
-  /* eslint-enable one-var, semi-style, no-underscore-dangle */
+  /* - */
 
   /** **************************************************************************
    *
@@ -705,7 +689,7 @@ const $__ES6GLOB = {};
    * @version      -
    * ************************************************************************ */
   /* - */
-  /* eslint-disable one-var, semi-style, no-underscore-dangle */
+  /* eslint-disable no-multi-spaces */
 
   (function() {
     // START OF IIFE
@@ -715,19 +699,14 @@ const $__ES6GLOB = {};
 
 
     // -- Local Modules
-    const Util = TLRU.Util.Public;
+    const Util = Tree.Util.Public;
 
 
     // -- Local Constants
-    // Saves the previous value of the library variable, so that it can be
-    // restored later on, if noConflict is used.
-    const previousLRU = root.LRU
-        ;
 
 
     // -- Local Variables
-    let methods
-      , pruneInterval
+    let pruneInterval
       , timeToPrune
       ;
 
@@ -780,12 +759,11 @@ const $__ES6GLOB = {};
      * @returns {Object}      returns the LRU object,
      * @since 0.0.0
      */
-    /* eslint-disable no-multi-spaces */
     LRU = function(options) {
       const obj = Object.create(methods);
       obj._library = {
         name: 'LRU',
-        version: '1.0.6',
+        version: '2.0.0-alpha.0.0',
       };
 
       obj.db = {};
@@ -819,11 +797,14 @@ const $__ES6GLOB = {};
 
       return obj;
     };
-    /* eslint-enable no-multi-spaces */
 
     // Attaches constants to LRU that provide name and version of the lib.
     LRU.NAME = 'LRU';
-    LRU.VERSION = '1.0.6';
+    LRU.VERSION = '2.0.0-alpha.0.0';
+
+    // Saves the previous value of the library variable, so that it can be
+    // restored later on, if noConflict is used.
+    const previousLRU = root.LRU;
 
 
     // -- Private Static Methods -----------------------------------------------
@@ -860,7 +841,6 @@ const $__ES6GLOB = {};
      * @since 0.0.0
      */
     LRU.noConflict = function() {
-      /* eslint-disable-next-line no-param-reassign */
       root.LRU = previousLRU;
       return this;
     };
@@ -868,7 +848,7 @@ const $__ES6GLOB = {};
 
     // -- Public Methods -------------------------------------------------------
 
-    methods = {
+    const methods = {
 
       /**
        * Returns the library name and version.
@@ -1019,7 +999,7 @@ const $__ES6GLOB = {};
 
     // END OF IIFE
   }());
-  /* eslint-enable one-var, semi-style, no-underscore-dangle */
+  /* eslint-enable no-multi-spaces */
 
   // Returns the library name:
   return LRU;

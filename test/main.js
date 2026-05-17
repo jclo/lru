@@ -1,25 +1,24 @@
 // ESLint declarations:
 /* global describe */
-/* eslint one-var: 0, semi-style: 0, no-underscore-dangle: 0 */
+/* - */
 
-'use strict';
 
 // -- Vendor Modules
 
 
 // -- Local Modules
-const LRU            = require('../index')
-    , pack           = require('../package.json')
-    , testlib        = require('./int/lib')
+import LRU from '../index.js';
+// import LRU from '../lib/es6lib.mjs';
+import pack from '../package.json' with { type: 'json' };
+import testlib from './int/lib.js';
 
-    , testover       = require('./int/over')
-    , testsetget     = require('./int/setget')
-    , testhasremove  = require('./int/hasremove')
-    , testced        = require('./int/countemptydump')
-    , testrenewprune = require('./int/renewprune')
-    , testmaxitage   = require('./int/maxitemsage')
-    , testautoprune  = require('./int/autoprune')
-    ;
+import testover from './int/over.js';
+import testsetget from './int/setget.js';
+import testhasremove from './int/hasremove.js';
+import testced from './int/countemptydump.js';
+import testrenewprune from './int/renewprune.js';
+import testmaxitage from './int/maxitemsage.js';
+import testautoprune from './int/autoprune.js';
 
 
 // -- Local Constants
@@ -55,3 +54,6 @@ describe('Test LRU:', () => {
   // Test the automatic prune:
   testautoprune(LRU);
 });
+
+
+// - oOo --

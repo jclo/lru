@@ -1,12 +1,10 @@
 // ESLint declarations:
 /* global describe, it */
-/* eslint one-var: 0, semi-style: 0, no-underscore-dangle: 0 */
+/* - */
 
-'use strict';
 
 // -- Vendor Modules
-const { expect } = require('chai')
-    ;
+import { expect } from 'chai';
 
 
 // -- Local Modules
@@ -19,7 +17,7 @@ const { expect } = require('chai')
 
 
 // -- Main
-module.exports = function(LRU, _) {
+export default function(LRU, _) {
   describe('Test the subset of Overslash:', () => {
     describe('_.isUndefined():', () => {
       const a = undefined
@@ -173,3 +171,6 @@ module.exports = function(LRU, _) {
     });
   });
 };
+
+
+// - oOo --
