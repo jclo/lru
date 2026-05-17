@@ -3,7 +3,7 @@
 ### 2.0.0 (May 17, 2026)
 
   * Updated the project with @mobilabs/es6lib ESM v3,
-  * ...,
+  * Release.
 
 
 ### 1.0.6 (January 27, 2024)

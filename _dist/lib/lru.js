@@ -1,5 +1,5 @@
 /*! ****************************************************************************
- * LRU v2.0.0-alpha.0.0
+ * LRU v2.0.0
  *
  * An in-memory key/value cache based on the Least Recently Used algorithm.
  * (you can download it from npm or github repositories)
@@ -762,7 +762,7 @@
       const obj = Object.create(methods);
       obj._library = {
         name: 'LRU',
-        version: '2.0.0-alpha.0.0',
+        version: '2.0.0',
       };
 
       obj.db = {};
@@ -799,7 +799,7 @@
 
     // Attaches constants to LRU that provide name and version of the lib.
     LRU.NAME = 'LRU';
-    LRU.VERSION = '2.0.0-alpha.0.0';
+    LRU.VERSION = '2.0.0';
 
     // Saves the previous value of the library variable, so that it can be
     // restored later on, if noConflict is used.
