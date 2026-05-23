@@ -4,7 +4,7 @@
 
   * Added publishing and documenting scripts to package.json,
   * Added make:package:publish:json.js script to create package.publish.json,
-  * ...,
+  * Release.
 
 
 ### 2.0.0 (May 17, 2026)
