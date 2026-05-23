@@ -1,5 +1,12 @@
 ### HEAD
 
+### 2.1.0 (May 23, 2026)
+
+  * Added publishing and documenting scripts to package.json,
+  * Added make:package:publish:json.js script to create package.publish.json,
+  * ...,
+
+
 ### 2.0.0 (May 17, 2026)
 
   * Updated the project with @mobilabs/es6lib ESM v3,

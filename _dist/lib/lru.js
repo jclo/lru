@@ -6,7 +6,7 @@
  * Copyright (c) 2026 Mobilabs <contact@mobilabs.fr> (https://www.mobilabs.fr).
  * Released under the MIT license. You may obtain a copy of the License
  * at: http://www.opensource.org/licenses/mit-license.php).
- * Built from ES6lib v3.0.0-beta.1.3.
+ * Built from ES6lib v3.0.0-beta.1.7.
  * ************************************************************************** */
 // ESLint declarations
 /* global define */
